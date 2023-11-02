@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from computations import CircleArea
+from computations import Circle
 app = Flask(__name__)
 
 @app.route('/')
@@ -28,7 +28,8 @@ def areaOfcircle():
     if request.method == 'POST':
         input_radius=request.form.get('InputFloat', '')
         input_radius=int(input_radius)
-        area = 3.14*input_radius*input_radius
+        circle_calculations=Circle(input_radius)
+        area=circle_calculations.calculate_area()
     return render_template('areaOfcircle.html', area=area)
  
 if __name__ == "__main__":
