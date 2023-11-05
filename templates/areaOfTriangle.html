@@ -6,25 +6,28 @@
     <body>
         <!--header-->
         <div class="header">
-        <a href="/profile">Profile</a>
-        <a href="/works">Works</a>
-        <a href="/contact">Contact</a>
-        <a href="/">Homepage</a>
+            <a href="/profile">PROFILE</a>
+            <a href="/works">WORKS</a>
+            <a href="/contact">CONTACT</a>
+            <a href="/">HOMEPAGE</a>
+            <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
+            <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
         </div>
 
         <!--content proper-->
         <h1>Find the Area of a Triangle!</h1>
+        <!--FORMS PROPER-->
         <form action="/areaOfTriangle" method="post">
-            <label for="InputFloat1" style="style1">Input your base: </label>
+            <label for="InputFloat1">Input your base: </label>
             <input type="text" id="InputFloat1" name="InputFloat1">
-        </form>
-        <form action="/areaOfTriangle" method="post">
-            <label for="InputFloat2" style="style1">Input your height: </label>
+            <br>
+            <form action="/areaOfTriangle" method="post">
+            <label for="InputFloat2">Input your height: </label>
             <input type="text" id="InputFloat2" name="InputFloat2">
-        <br>
+            <br>
             <input type="Submit" value="Find the area!">
         </form>
-
+        <!--RESULTS PROPER-->
         {% if area %}
         <p> The area is {{ area }} units</p>
         {% endif %}

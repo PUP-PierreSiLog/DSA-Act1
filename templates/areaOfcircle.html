@@ -4,9 +4,17 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
     </head>
     <body>
+        <div class="header">
+            <a href="/profile">PROFILE</a>
+            <a href="/works">WORKS</a>
+            <a href="/contact">CONTACT</a>
+            <a href="/">HOMEPAGE</a>
+            <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
+            <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
+        </div>
         <h1>Find the Area of a circle!</h1>
         <form action="/areaOfcircle" method="post">
-            <label for="InputFloat" style="style1">Input your radius</label>
+            <label for="InputFloat">Input your radius</label>
             <input type="text" id="InputFloat" name="InputFloat">
             <br>
             <input type="Submit" value="Find the area!">

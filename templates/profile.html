@@ -2,10 +2,25 @@
 <html>
 <head>
     <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
 </head>
 <body>
-    <h1>Welcome to your Profile Page</h1>
-    <p>This is a simple profile page rendered using Flask's templating.</p>
-    <p>Create your profile here with Name, section , course, subject and display your favorite sayings or motto! using html tags </p>
+    <!--header-->
+    <div class="header">
+        <a href="/profile">PROFILE</a>
+        <a href="/works">WORKS</a>
+        <a href="/contact">CONTACT</a>
+        <a href="/">HOMEPAGE</a>
+        <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
+        <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
+    </div>
+    <br>
+    <div class="profile">
+       <img src="{{ url_for('static', filename='IMG_5997.jpg') }}" alt="Profile Picture" class="pfp">
+       <h2>Pierre Victor T. Zurbito</h2>
+       <p>BS Computer Engineering Student, Polytechnic University of the Philippines</p>
+       <hr>
+       <a href="mailto:pierrevictortzurbito@iskolarngbayan.pup.edu.ph"><img src="{{ url_for('static', filename='email.png') }}" alt="Email" class="icons"></a>
+    </div>
 </body>
 </html>

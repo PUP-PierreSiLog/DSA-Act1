@@ -5,19 +5,23 @@ app = Flask(__name__, static_url_path='', static_folder='D:/CMPE201_DSA/Flask_In
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('profile.html')
 
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
 
-@app.route('/works', methods=['GET', 'POST'])
-def works():
+@app.route('/ToUppercase', methods=['GET', 'POST'])
+def ToUppercase():
     result = None
     if request.method == 'POST':
         input_string = request.form.get('inputString', '')
         result = input_string.upper()
     return render_template('touppercase.html', result=result)
+
+@app.route('/works')
+def works():
+    return render_template('index.html')
 
 @app.route('/contact')
 def contact():
