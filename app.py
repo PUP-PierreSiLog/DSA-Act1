@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from computations import Circle, Triangle
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='D:/CMPE201_DSA/Flask_Intro/Flask_Intro/static')
 
 @app.route('/')
 def index():
