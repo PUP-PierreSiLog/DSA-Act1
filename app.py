@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from computations import Circle
+from computations import Circle, Triangle
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -31,6 +32,20 @@ def areaOfcircle():
         circle_calculations=Circle(input_radius)
         area=circle_calculations.calculate_area()
     return render_template('areaOfcircle.html', area=area)
+
+@app.route('/areaOfTriangle', methods=['GET', 'POST'])
+def areaOfTriangle():
+    area=None
+    if request.method == 'POST':
+        input_base=request.form.get('InputFloat1', '')
+        input_height=request.form.get('InputFloat2','')
+        #Checks if the base and height are integers
+        if input_height.isdigit() and input_base.isdigit():
+            input_base=int(input_base)
+            input_height=int(input_height)
+            triangle_calculations=Triangle(input_base, input_height)
+            area=triangle_calculations.calculate_area()
+    return render_template('areaOfTriangle.html', area=area)
  
 if __name__ == "__main__":
     app.run(debug=True)
