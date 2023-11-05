@@ -1,31 +1,27 @@
 <html>
     <head>
         <title>Area of a Triangle!</title>
-        <style>
-            h1 {
-                text-align: center;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            .style1  {
-                font-family: arial;
-            }
-
-            a {
-                color: black;
-                text-decoration: none;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
     </head>
     <body>
+        <!--header-->
+        <div class="header">
+        <a href="/profile">Profile</a>
+        <a href="/works">Works</a>
+        <a href="/contact">Contact</a>
+        <a href="/">Homepage</a>
+        </div>
+
+        <!--content proper-->
         <h1>Find the Area of a Triangle!</h1>
         <form action="/areaOfTriangle" method="post">
             <label for="InputFloat1" style="style1">Input your base: </label>
             <input type="text" id="InputFloat1" name="InputFloat1">
-            <form action="/areaOfTriangle" method="post">
+        </form>
+        <form action="/areaOfTriangle" method="post">
             <label for="InputFloat2" style="style1">Input your height: </label>
             <input type="text" id="InputFloat2" name="InputFloat2">
-            <br>
+        <br>
             <input type="Submit" value="Find the area!">
         </form>
 
