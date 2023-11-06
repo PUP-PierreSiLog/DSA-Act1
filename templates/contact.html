@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Area of a Circle!</title>
+        <title>Profile Page</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
     </head>
     <body>
+        <!--header-->
         <div class="header">
             <a href="/profile">PROFILE</a>
             <a href="/works">WORKS</a>
@@ -12,17 +14,10 @@
             <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
             <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
         </div>
-        <h1>Find the Area of a circle!</h1>
-        <form action="/areaOfcircle" method="post">
-            <label for="InputFloat">Input your radius</label>
-            <input type="text" id="InputFloat" name="InputFloat">
-            <br>
-            <input type="Submit" value="Find the area!">
-        </form>
-
-        {% if area %}
-        <p> The area is {{ area }} units</p>
-        {% endif %}
-
+        <br>
+        <img src="{{ url_for('static', filename='construction.png') }}" alt="Construction" class="icons">
+        <h1>Webpage under construction!</h1>
+        <p class="username">Please come back at a later time.</p>
+        <p><a href="mailto:pierrevictortzurbito@iskolarngbayan.pup.edu.ph">Click to send an email</a></p>
     </body>
 </html>

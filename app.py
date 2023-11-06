@@ -25,7 +25,7 @@ def works():
 
 @app.route('/contact')
 def contact():
-    return "Contact Page. please create me an html page with dummy contact info"
+    return render_template('contact.html')
 
 @app.route('/areaOfcircle', methods=['GET', 'POST'])
 def areaOfcircle():
