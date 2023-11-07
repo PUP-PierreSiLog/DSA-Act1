@@ -15,9 +15,26 @@
             <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
         </div>
         <br>
-        <img src="{{ url_for('static', filename='construction.png') }}" alt="Construction" class="icons">
-        <h1>Webpage under construction!</h1>
-        <p class="username">Please come back at a later time.</p>
-        <p><a href="mailto:pierrevictortzurbito@iskolarngbayan.pup.edu.ph">Click to send an email</a></p>
+        <div class="contact-container">
+            <h1>Contact Pierre!</h1>
+            <form action="mailto:pierrevictortzurbito@iskolarngbayan.pup.edu.ph" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+            <hr>
+            <div class="icons-container">
+                <a href="https://github.com/PUP-PierreSiLog" class="link-container">
+                     <img src="{{ url_for('static', filename='github.png') }}" alt="Github" class="icons">
+                </a>
+                <a href="https://www.linkedin.com/in/iampierrezurbito/" class="link-container">
+                    <img src="{{ url_for('static', filename='linkedin.png') }}" alt="Github" class="icons">
+               </a>
+            </div>
+        </div>
     </body>
 </html>
