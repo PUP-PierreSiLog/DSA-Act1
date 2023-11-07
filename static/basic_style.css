@@ -29,6 +29,7 @@ h2 {
     background-color: #3A3B3C;
     margin-top: 0;
     padding: 5px;
+    text-align: center;
 }
 
 .header a {
@@ -178,17 +179,65 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 1500px;
+    width: 750px;
     float: right;
     margin-left: 50px;
 }
 
-table, th, td{
-    width: 1200px;
+table, td{
+    max-width: 1200px;
     border-collapse: collapse;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: 1px solid;
     padding: 4px;
     margin: 0 auto;
-    border-color: #3A3B3C;
+    border-bottom: 1px solid #acacac;
+}
+
+.graytext {
+    color: #3A3B3C;
+}
+
+.alignleft{
+    text-align: right;
+    font-weight: bold;
+}
+
+.aligncenter{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile-right2{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    margin-left: 50px;
+    float: right;
+}
+
+.progress-container {
+    width: 90%;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+
+.progress-bar-leadership {
+    width: 75%;
+    height: 10px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.progress-bar-time-management {
+    width: 85%;
+    height: 10px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
 }
