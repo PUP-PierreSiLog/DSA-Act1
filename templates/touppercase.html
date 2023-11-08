@@ -15,15 +15,16 @@
         <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
     </div>
     <h1>Convert String to Uppercase</h1>
-
-    <form action="/ToUppercase" method="post">
-        <label for="inputString">Enter a string:</label>
-        <input type="text" id="inputString" name="inputString">
-        <input type="submit" value="Convert">
-    </form>
-
-    {% if result %}
-    <p>Converted string: {{ result }}</p>
-    {% endif %}
+    <div class="contact-container">
+        <form action="/ToUppercase" method="post">
+            <label for="inputString">Enter a string:</label>
+            <input type="text" id="inputString" name="inputString">
+            <input type="submit" value="Convert">
+        </form>
+        <hr>
+        {% if result %}
+        <p>Converted string: {{ result }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>

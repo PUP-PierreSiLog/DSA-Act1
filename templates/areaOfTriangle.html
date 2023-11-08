@@ -17,20 +17,23 @@
         <!--content proper-->
         <h1>Find the Area of a Triangle!</h1>
         <!--FORMS PROPER-->
-        <form action="/areaOfTriangle" method="post">
-            <label for="InputFloat1">Input your base: </label>
-            <input type="text" id="InputFloat1" name="InputFloat1">
-            <br>
+        <div class="contact-container">
             <form action="/areaOfTriangle" method="post">
-            <label for="InputFloat2">Input your height: </label>
-            <input type="text" id="InputFloat2" name="InputFloat2">
-            <br>
-            <input type="Submit" value="Find the area!">
-        </form>
+                <label for="InputFloat1">Input your base: </label>
+                <input type="text" id="InputFloat1" name="InputFloat1">
+                <br>
+                <form action="/areaOfTriangle" method="post">
+                <label for="InputFloat2">Input your height: </label>
+                <input type="text" id="InputFloat2" name="InputFloat2">
+                <br>
+                <input type="Submit" value="Find the area!">
+            </form>
+        <hr>
         <!--RESULTS PROPER-->
         {% if area %}
         <p> The area is {{ area }} units</p>
-        {% endif %}
+        {% endif %} 
+        </div>
 
     </body>
 </html>

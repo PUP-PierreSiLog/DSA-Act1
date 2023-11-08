@@ -13,16 +13,18 @@
             <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
         </div>
         <h1>Find the Area of a circle!</h1>
-        <form action="/areaOfcircle" method="post">
-            <label for="InputFloat">Input your radius</label>
-            <input type="text" id="InputFloat" name="InputFloat">
-            <br>
-            <input type="Submit" value="Find the area!">
-        </form>
-
-        {% if area %}
-        <p> The area is {{ area }} units</p>
-        {% endif %}
+        <div class="contact-container">
+            <form action="/areaOfcircle" method="post">
+                <label for="InputFloat">Input your radius</label>
+                <input type="text" id="InputFloat" name="InputFloat">
+                <br>
+                <input type="Submit" value="Find the area!">
+            </form>
+            <hr>
+            {% if area %}
+            <p> The area is {{ area }} units</p>
+            {% endif %}
+        </div>  
 
     </body>
 </html>
