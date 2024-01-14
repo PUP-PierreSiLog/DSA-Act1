@@ -32,9 +32,12 @@ def areaOfcircle():
     area=None
     if request.method == 'POST':
         input_radius=request.form.get('InputFloat', '')
-        input_radius=int(input_radius)
-        circle_calculations=Circle(input_radius)
-        area=circle_calculations.calculate_area()
+        if input_radius.isdigit():
+            input_radius=int(input_radius)
+            circle_calculations=Circle(input_radius)
+            area=circle_calculations.calculate_area()
+        else:
+            area="Please input a valid integer."
     return render_template('areaOfcircle.html', area=area)
 
 @app.route('/areaOfTriangle', methods=['GET', 'POST'])
@@ -49,7 +52,28 @@ def areaOfTriangle():
             input_height=int(input_height)
             triangle_calculations=Triangle(input_base, input_height)
             area=triangle_calculations.calculate_area()
+        else:
+            area="Please input a valid integer."
     return render_template('areaOfTriangle.html', area=area)
+
+queue = []
+@app.route('/Queue-Deque', methods=['GET', 'POST'])
+def QueueDeque():
+    Enqueue = None
+    Dequeue = None
+
+    if request.method == 'POST':
+
+        if request.form.get('enqueue', ''):
+            data = str(request.form.get('inputString', ''))
+            queue.append(data)
+
+        elif request.form.get('dequeue', ''):
+            if queue:
+                Dequeue = queue.pop(0)
+
+    return render_template('Queue-Deque.html', Enqueue=queue, Dequeue=Dequeue)
+
  
 if __name__ == "__main__":
     app.run(debug=True)

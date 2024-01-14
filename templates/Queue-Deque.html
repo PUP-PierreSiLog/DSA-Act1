@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Page Under Construction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/profile">PROFILE</a>
+            <a href="/works">WORKS</a>
+            <a href="/contact">CONTACT</a>
+            <a href="/">HOMEPAGE</a>
+            <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
+            <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
+        </div>
+        <br>    
+        <h1>Queue-Deque</h1>
+        <!--FORMS PROPER-->
+        <div class="contact-container">
+            <form action="/Queue-Deque" method="post" >
+                <label for="inputString" class="Anim" >  Enter a string:     </label>
+                <input type="text" id="inputString" name="inputString" placeholder="Enter any key">
+                <br>    
+                <input type="submit" id ="enequeue" name="enqueue" value="Queue"  class="btn">
+                <input type="submit" id ="dequeue" name="dequeue" value="Deque" class="btn">
+            </form>
+        <hr>
+        <!--RESULTS PROPER-->
+            {% if Enqueue %}
+            <p class="Anim">Enqueue: {{ " -> ".join(Enqueue) }}</p>
+            {% endif %}
+            {% if Dequeue %}
+            <p class="Anim" > Dequeue: {{ Dequeue }}</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
