@@ -19,12 +19,6 @@ class HashTable:
         key = sum(ord(char) for char in word)
         index = hash_function(key)
 
-        if self.table[index] is None:
-            self.table[index] = [{'word': word, 'key': key}]  # Store both the word and the key
-        else:
-            self.table[index].append({'word': word, 'key': key})
-        
-        print(f"Inserted {word} with key {key} at index {index}")
 
     def delete(self, word):
         # Deletion is done by marking the word as None

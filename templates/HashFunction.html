@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Profile Page</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
-    </head>
-    <body>
-        <!--header-->
-        <div class="header">
-            <a href="/profile">PROFILE</a>
-            <a href="/works">WORKS</a>
-            <a href="/contact">CONTACT</a>
-            <a href="/">HOMEPAGE</a>
-            <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
-            <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
-        </div>
-        <br>
-        <div class="contact-container">
-            <!--Hash Options-->
-            <h1>Hash Functions</h1>
-            <form action="/HashFunction" method="post">
-                <label for="HashOptions">Choose a Hash Function to be Used:</label>
-                <select name="HashOptions" id="HashOptions">
-                    <option value="Option1">Hash Function 1</option>
-                    <option value="Option2">Hash Function 2</option>
-                    <option value="Option3">Hash Function 3</option>
-                </select>
-                <hr>
-                <br>
-                <label for="IntegerSelect">Select the number of Integers to be Used:</label>
-                <input type="text" id="IntegerSelect" name="IntegerSelect">
-                <label for="DataInput">Input your data:</label>
-                <input type="text" id="DataInput" name="DataInput">
-                <input type="submit" value="Submit">
-            </form>
-            <!--Results Section-->
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <a href="/profile">PROFILE</a>
+        <a href="/works">WORKS</a>
+        <a href="/contact">CONTACT</a>
+        <a href="/">HOMEPAGE</a>
+        <a href="https://www.linkedin.com/in/iampierrezurbito/">LINKEDIN</a>
+        <a href="https://github.com/PUP-PierreSiLog">GITHUB</a>
+    </div>
+    <br>
+    <div class="contact-container">
+        <!-- Hash Options -->
+        <h1>Hash Functions</h1>
+        <form action="/HashFunction" method="post">
+            <label for="HashOptions">Choose a Hash Function to be Used:</label>
+            <select name="HashOptions" id="HashOptions">
+                <option value="Option1">Hash Function 1</option>
+                <option value="Option2">Hash Function 2</option>
+                <option value="Option3">Hash Function 3</option>
+            </select>
             <hr>
-            <p>Hash Option: {{ hash_option }}</p>
+            <br>
+            <label for="IntegerSelect">Select the number of Integers to be Used:</label>
+            <input type="text" id="IntegerSelect" name="IntegerSelect">
+            <label for="DataInput">Input your data:</label>
+            <input type="text" id="DataInput" name="DataInput">
+            <input type="submit" value="Submit">
+        </form>
+        <!-- Results Section -->
+        <hr>
+        <p>Hash Option: {{ hash_option }}</p>
 
-            {% if hash_result %}
-                <p>Hash Result: {{ hash_result }}</p>
-            {% endif %}
-    </body>
+        {% if hash_result is defined %}
+            <p>Hash Result: {{ hash_result }}</p>
+        {% else %}
+            <p>Hash Result is not available</p>
+        {% endif %}
+    </div>
+</body>
 </html>

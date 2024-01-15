@@ -60,54 +60,53 @@ def areaOfTriangle():
 hash_table=HashTable(32)
 @app.route('/HashFunction', methods=['GET', 'POST'])
 def HashFunction():
-    try:
-        hash_option = None
-        hash_result = None  # Add this line
+    hash_option = None
+    hash_result = None
+    hash_function = None
+    data_input = None
 
-        if request.method == 'POST':
-            hash_option = request.form.get('HashOptions')
-            print(f"Received hash_option: {hash_option}")
-            integer_select = int(request.form['IntegerSelect'])
-            data_input = request.form['DataInput']
+    if request.method == 'POST':
+        hash_option = request.form.get('HashOptions')
+        print(f"Received hash_option: {hash_option}")
+        integer_select = int(request.form['IntegerSelect'])
+        data_input = request.form['DataInput']
 
-            print(f"Received integer_select: {integer_select}")
-            print(f"Received data_input: {data_input}")
+        print(f"Received integer_select: {integer_select}")
+        print(f"Received data_input: {data_input}")
 
-            # Validate hash option
-            valid_options = ['Option1', 'Option2', 'Option3']
-            if hash_option not in valid_options:
-                return "Invalid hash option"
+        # Validate hash option
+        valid_options = ['Option1', 'Option2', 'Option3']
+        if hash_option not in valid_options:
+            return "Invalid hash option"
 
-            # Choose the appropriate hash function based on the selected option
-            if hash_option == 'Option1':
-                hash_function = hash_table.hash_function_1
-            elif hash_option == 'Option2':
-                hash_function = hash_table.hash_function_2
-            elif hash_option == 'Option3':
-                hash_function = hash_table.hash_function_3
+        # Choose the appropriate hash function based on the selected option
+        if hash_option == 'Option1':
+            hash_function = hash_table.hash_function_1
+        elif hash_option == 'Option2':
+            hash_function = hash_table.hash_function_2
+        elif hash_option == 'Option3':
+            hash_function = hash_table.hash_function_3
+        else:
+            return "Invalid hash option"
+
+        # Insert or delete data based on the number of integers specified
+        if integer_select == 1:
+            # Assuming "del " prefix for deletion
+            if data_input.startswith("del "):
+                word_to_delete = data_input[4:]
+                hash_table.delete(word_to_delete)
             else:
-                return "Invalid hash option"
+                hash_table.insert(data_input, hash_function)
 
-            # Insert or delete data based on the number of integers specified
-            if integer_select == 1:
-                # Assuming "del " prefix for deletion
-                if data_input.startswith("del "):
-                    word_to_delete = data_input[4:]
-                    hash_table.delete(word_to_delete)
-                else:
-                    hash_table.insert(data_input, hash_function)
+            # Calculate hash result
+        key = sum(ord(char) for char in data_input)
+        hash_result = hash_function(key)
+        print(f"Calculated key: {key}, hash_result: {hash_result}")
 
-                # Calculate hash result
-                hash_result = hash_function(sum(ord(char) for char in data_input))
+        # Display the updated hash table
+        hash_table.display()
 
-            # Display the updated hash table
-            hash_table.display()
-
-    except Exception as e:
-        print(f"Error: {e}")
-        return "An error occurred. Check the console for details."
-    hash_result = hash_function(sum(ord(char) for char in data_input))
-
-    return render_template('HashFunction.html', hash_option=hash_option, hash_result=hash_result)  # Pass hash_result to the template
+        # Pass the updated hash_result to the template
+        return render_template('HashFunction.html', hash_option=hash_option, hash_result=hash_result)
 if __name__ == "__main__":
     app.run(debug=True)
