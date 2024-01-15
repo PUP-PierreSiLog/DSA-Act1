@@ -36,12 +36,27 @@
         <!-- Results Section -->
         <hr>
         <p>Hash Option: {{ hash_option }}</p>
-
+        
         {% if hash_result is defined %}
             <p>Hash Result: {{ hash_result }}</p>
         {% else %}
             <p>Hash Result is not available</p>
         {% endif %}
+        
+        <h2>Hash Table:</h2>
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Content</th>
+            </tr>
+            {% for index, content in hash_table_display.items() %}
+                <tr>
+                    <td>{{ index }}</td>
+                    <td>{{ content }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </table>
     </div>
 </body>
 </html>

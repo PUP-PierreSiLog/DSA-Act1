@@ -60,6 +60,8 @@ def areaOfTriangle():
 hash_table=HashTable(32)
 @app.route('/HashFunction', methods=['GET', 'POST'])
 def HashFunction():
+    global hash_table  # Add this line
+
     hash_option = None
     hash_result = None
     hash_function = None
@@ -103,10 +105,10 @@ def HashFunction():
         hash_result = hash_function(key)
         print(f"Calculated key: {key}, hash_result: {hash_result}")
 
-        # Display the updated hash table
-        hash_table.display()
+    # Display the updated hash table
+    hash_table_display = hash_table.display()
 
-        # Pass the updated hash_result to the template
-        return render_template('HashFunction.html', hash_option=hash_option, hash_result=hash_result)
+    # Pass the updated hash_result and hash_table_display to the template
+    return render_template('HashFunction.html', hash_option=hash_option, hash_result=hash_result, hash_table_display=hash_table_display, hash_table=hash_table)
 if __name__ == "__main__":
     app.run(debug=True)

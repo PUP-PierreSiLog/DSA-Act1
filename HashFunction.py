@@ -33,10 +33,10 @@ class HashTable:
         print(f"{word} not found for deletion")
 
     def display(self):
-        result = []
+        result = {}
         for i in range(self.size):
             if self.table[i] is not None:
-                result.append(f"Index {i}: {self.table[i]}")
+                result[i] = self.table[i]
             else:
-                result.append(f"Index {i}: Empty")
+                result[i] = "Empty"
         return result
